@@ -1,0 +1,59 @@
+{
+  "name": "softsolvic-website",
+  "version": "1.0.0",
+  "description": "Modern, responsive website for SoftSolvic software house",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8000 --open=/",
+    "dev": "live-server --port=8000 --open=/",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o styles.min.css styles.css",
+    "minify-js": "uglifyjs script.js -o script.min.js -c -m",
+    "optimize-images": "imagemin assets/* --out-dir=assets/optimized",
+    "lint-css": "stylelint styles.css",
+    "lint-js": "eslint script.js",
+    "test": "npm run lint-css && npm run lint-js",
+    "deploy": "npm run build && echo 'Build complete. Ready for deployment.'"
+  },
+  "keywords": [
+    "website",
+    "software-house",
+    "responsive",
+    "modern",
+    "html5",
+    "css3",
+    "javascript",
+    "web-development",
+    "ui-ux",
+    "portfolio"
+  ],
+  "author": "SoftSolvic Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softsolvic/website.git"
+  },
+  "homepage": "https://softsolvic.com",
+  "bugs": {
+    "url": "https://github.com/softsolvic/website/issues"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "clean-css-cli": "^5.6.0",
+    "uglify-js": "^3.17.4",
+    "imagemin-cli": "^7.0.0",
+    "stylelint": "^15.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+} 
